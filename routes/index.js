@@ -29,8 +29,7 @@ router.post('/create/ticket', ctrlTicket.createTicket);
 router.get('/tickets', ctrlTicket.getTickets);
 router.get('/ticket/:id', ctrlTicket.getTicket);
 router.put('/update/ticket/:id', ctrlTicket.updateTicket);
-
-router.get('/new/tickets/:new', ctrlTicket.ticketByStatus)
+router.get('/new/tickets/:new', ctrlTicket.ticketByStatus);
 
 // Metrics
 router.get('/metric', ctrlPeople.metrics);

@@ -40,10 +40,7 @@ ctrlTicket.createTicket = async (req, res) => {
 ctrlTicket.getTickets = async (req, res) => {
 
     try {
-        const getTickets = await Ticket.find().sort({
-            status: 1
-        });
-        console.log(getTickets);
+        const getTickets = await Ticket.getAllTickets();
 
         if (!getTickets) return res.json({
             success: true,
@@ -135,7 +132,7 @@ ctrlTicket.updateTicket = async (req, res) => {
 ctrlTicket.ticketByStatus = async (req, res) => {
     try {
         let status = req.params.new;
-    
+
         const newTickets = await Ticket.getNewTickets(status);
 
         if (!newTickets) return res.json({

@@ -7,7 +7,7 @@ mongoose.connect(process.env.MONGO_URI, {
     useCreateIndex: true,
     useFindAndModify: false
 })
-    .then(db => console.log('DB Conectada'))
+    .then(db => console.log('DB Conectada 🗄'))
     .catch(err => console.error(err));
 
 
@@ -17,7 +17,7 @@ app.set('port', process.env.PORT || 5000);
 
 // Init server
 const server = app.listen(app.get('port'), () => {
-    console.log(`Corriendo en el puerto -> ${server.address().port}`);
+    console.log(`Corriendo en el puerto -> ${server.address().port} 🖥`);
 })
 
 // Modelos
