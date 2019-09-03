@@ -66,4 +66,16 @@ ticketSchema.statics.getAllTickets = function () {
     ]);
 }
 
+ticketSchema.statics.currentStatus = function () {
+    return this.aggregate([
+        {
+            $group: {
+                _id: { status: "$status" },
+                count: { $sum: 1 }
+            }
+
+        }
+    ]);
+}
+
 module.exports = mongoose.model('Ticket', ticketSchema);

@@ -158,4 +158,28 @@ ctrlTicket.ticketByStatus = async (req, res) => {
     }
 }
 
+ctrlTicket.currentTicketState = async (req, res) => {
+    try {
+        const currentState = await Ticket.currentStatus();
+
+        if(!currentState) return res.json({
+            success: false,
+            message: 'Error capturing data'
+        });
+
+        return res.json({
+            success: true,
+            currentState: currentState,
+            message: 'Exito!'
+        });
+
+    } catch (error) {
+        console.warn(error);
+        return res.json({
+            success: false,
+            message: 'Inernal server error'
+        })
+    }
+}
+
 module.exports = ctrlTicket;

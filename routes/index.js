@@ -30,6 +30,7 @@ router.get('/tickets', ctrlTicket.getTickets);
 router.get('/ticket/:id', ctrlTicket.getTicket);
 router.put('/update/ticket/:id', ctrlTicket.updateTicket);
 router.get('/new/tickets/:new', ctrlTicket.ticketByStatus);
+router.get('/current/status', ctrlTicket.currentTicketState);
 
 // Metrics
 router.get('/metric', ctrlPeople.metrics);
